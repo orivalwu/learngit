@@ -1,1 +1,1 @@
-# some code about c,c++,and java.
+# some codes about c,c++,and java.
