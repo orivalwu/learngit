@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+//定义一个结构体类型，并且取名为game 
+typedef struct game {
+	int num;
+	struct game *next;
+} game; 
+//创建链表函数,形参n是用来接受结点的个数的 
+game*creat(int n)
+{
+	game *head,*p,*q;
+	int m=0;
+	srand(time(NULL));
+	for(int t=0; t<n; t++) {
+		p=(game*)malloc(sizeof(game));
+		p->num=t+1;
+		if(m==0) {
+			head=p;
+		} else {
+			q->next=p;
+		}
+		q=p;
+		m++;
+	} 
+	p->next=head;
+	//以上操作建立了一个单向循环链表，并且头指针的数据域也储存数值1 
+	return head;
+}
+//该函数是用来删除结点的，需要知道被删除结点的指针和其上结点的指针 
+void del(game*k,game*p){
+	k->next=p->next;
+}
+//该函数是用来输出剩余游戏者的编号的，在删除结点后，直接遍历输出即可 
+void livingpeopelenumber(game*head,int n){
+	game*p=head;
+	printf("剩余的赌徒编号为:");
+	for(int i=0;i<n;i++)
+	{
+		printf("%d ",p->num);
+		p=p->next;
+	}
+	printf("游戏继续\n");
+	
+}
+int main() {
+	int n,t,m=0;
+	game*head,*p,*q,*k;
+	printf("请输入游戏玩家数:\n");
+	scanf("%d",&n);
+	t=n;
+	head=creat(n);
+	p=k=head;
+	for(int i=0;i<n-1;i++)
+	{
+		m=rand()%6+1;
+		q=p;//q可以用来输出开始游戏者的编号 
+		for(int j=0;j<m-1;j++)
+		{
+			k=p; 
+			p=p->next;//用k来记录p所指结点的上一个结点的地址，以便用于结点的删除 
+		}
+		printf("在第%d轮游戏中，从编号为%d的赌徒开始游戏，子弹在第%d发射出，编号为%d的赌徒" 
+		"阵亡\n",i+1,q->num,m,p->num);
+		del(k,p);
+		t--;//用于记录剩玩家的人数，便于livingpeoplenumber的遍历 
+		livingpeopelenumber(head,t);
+		printf("\n=======================================================================\n");
+		p=p->next;
+	}
+	printf("游戏结束，%d号赌徒胜利\n",p->num);
+	return 0;
+}
