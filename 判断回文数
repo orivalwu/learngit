@@ -1,0 +1,48 @@
+package test1;
+
+import java.util.Scanner;
+
+public class XL {
+
+	public static int reverse(int number) {
+		int tem=0,k=1,i=1,t=number;
+		while(number>=10)
+		{
+			number/=10;
+			k*=10;//这个循环用来number的最大位权是多少
+		}
+		number=t;
+		while(k>0)
+		{
+			i=number%10;
+			number/=10;
+			tem+=i*k;
+			k/=10;//用来将number逆序输出
+		}
+		if(t==tem)
+			number=1;
+		else
+			number=0;
+		return number;
+	}
+	
+	public static boolean ispalindrome(int number) {
+		if(number==1)
+			return true;
+		else
+			return false;
+	}
+	
+	public static void main(String[] args) {
+		int number,i;
+		boolean judge;
+		System.out.println("请输入一个数字");
+		Scanner in = new Scanner(System.in);
+		number = in.nextInt();
+		i=reverse(number);
+		judge=ispalindrome(i);
+		System.out.println(judge);
+		in.close();
+	}
+
+}
