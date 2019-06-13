@@ -1,0 +1,30 @@
+#id{
+    -fx-alignment:CENTER;
+    -fx-background-color: #EBEBEB;
+}
+#order{
+    -fx-alignment: CENTER;
+    -fx-background-color: #E6E6FA;
+}
+#specific{
+    -fx-alignment: CENTER;
+    -fx-background-color: #E0EEEE;
+
+}
+#total{
+    -fx-alignment: CENTER;
+    -fx-background-color: #DEDEDE;
+
+}
+#rank{
+    -fx-alignment: CENTER;
+    -fx-background-color: #E0FFFF;
+
+}
+.button{
+    -fx-background-color: slateblue;
+    -fx-text-fill: white;
+    -fx-font: bold italic 12pt "Arial";
+
+}
+

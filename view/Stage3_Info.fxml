@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="522.0" prefWidth="691.0" style="-fx-background-color: Lightblue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.S3_Controller">
+    <top>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="back" defaultButton="true" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="220.0" text="重选游戏模式">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Pane prefHeight="52.0" prefWidth="217.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="27.0" prefHeight="52.0" prefWidth="193.0" text="分组信息展示">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane BorderPane.alignment="CENTER">
+            <content>
+                <AnchorPane>
+                    <children>
+                        <TableView fx:id="TV_information" layoutY="-1.0" prefHeight="409.0" prefWidth="691.0" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-69.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                                <TableColumn id="id" fx:id="TC_cId" prefWidth="175.0" text="id" />
+                                <TableColumn id="name" fx:id="TC_cName" prefWidth="175.0" text="姓名" />
+                                <TableColumn id="group" fx:id="TC_cGroup" prefWidth="175.0" text="组别" />
+                                <TableColumn id="grade" fx:id="TC_Grade" prefWidth="148.0" text="成绩" />
+                            </columns>
+                            <effect>
+                                <Bloom threshold="1.0" />
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="TEXT" />
+                            </cursor>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <Pane BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="play" defaultButton="true" mnemonicParsing="false" onAction="#playGame" prefHeight="56.0" prefWidth="138.0" text="开始游戏">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Button fx:id="details" defaultButton="true" layoutX="557.0" mnemonicParsing="false" onAction="#showDetails" prefHeight="55.0" prefWidth="132.0" text="详细信息">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,5 @@
+.button{
+    -fx-font: bold 24px"Serif";
+    -fx-padding:10;
+    -fx-background-color:#00FF99;
+}

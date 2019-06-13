@@ -1,0 +1,26 @@
+#id{
+    -fx-background-color: #FFF8DC;
+    -fx-alignment: center;
+}
+#name{
+    -fx-background-color:#FFEFDB;
+    -fx-alignment: center;
+}
+#group{
+    -fx-background-color: #FFE7BA;
+    -fx-alignment: center;
+}
+#grade{
+    -fx-background-color: #FFE1FF;
+    -fx-alignment: center;
+}
+.root{
+    -fx-background-color: rgb(200,200,200);
+}
+.button{
+    -fx-text-fill: #006464;
+    -fx-background-color: #DFB951;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-padding: 5;
+}
